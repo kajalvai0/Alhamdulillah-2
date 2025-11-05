@@ -683,3 +683,425 @@
         </div>
     </section>
     
+ <!-- স্বেচ্ছাসেবী পেজ -->
+    <section id="volunteer" class="page-section">
+        <div class="container py-5">
+            <h2 class="text-center section-title">স্বেচ্ছাসেবী হন</h2>
+            
+            <div class="volunteer-card">
+                <h3 class="mb-3">আলহামদুলিল্লাহ ফাউন্ডেশনের সাথে যুক্ত হন</h3>
+                <p class="lead">আপনার সময় এবং দক্ষতা দিয়ে মানবতার সেবায় অংশ নিন</p>
+            </div>
+
+            <div class="form-container">
+                <form id="volunteerForm">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="volunteerName" class="form-label">পূর্ণ নাম *</label>
+                            <input type="text" class="form-control" id="volunteerName" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="volunteerMobile" class="form-label">মোবাইল নম্বর *</label>
+                            <input type="tel" class="form-control" id="volunteerMobile" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="volunteerEmail" class="form-label">ইমেইল</label>
+                            <input type="email" class="form-control" id="volunteerEmail">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="volunteerOccupation" class="form-label">পেশা</label>
+                            <input type="text" class="form-control" id="volunteerOccupation">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="volunteerSkills" class="form-label">আপনার দক্ষতা *</label>
+                        <select class="form-control" id="volunteerSkills" multiple required>
+                            <option value="teaching">শিক্ষাদান</option>
+                            <option value="counseling">পরামর্শদান</option>
+                            <option value="technical">টেকনিক্যাল দক্ষতা</option>
+                            <option value="management">ব্যবস্থাপনা</option>
+                            <option value="creative">সৃজনশীল কাজ</option>
+                            <option value="other">অন্যান্য</option>
+                        </select>
+                        <small class="form-text text-muted">Ctrl ধরে রাখলে একাধিক নির্বাচন করা যাবে</small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="availableTime" class="form-label">সাপ্তাহিক কত সময় দিতে পারবেন? *</label>
+                        <select class="form-control" id="availableTime" required>
+                            <option value="">সময় নির্বাচন করুন</option>
+                            <option value="1-2">১-২ ঘন্টা</option>
+                            <option value="3-5">৩-৫ ঘন্টা</option>
+                            <option value="5-10">৫-১০ ঘন্টা</option>
+                            <option value="10+">১০+ ঘন্টা</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="volunteerMessage" class="form-label">আপনার আগ্রহ এবং অভিজ্ঞতা</label>
+                        <textarea class="form-control" id="volunteerMessage" rows="4" placeholder="আপনি কেন স্বেচ্ছাসেবী হতে চান এবং আপনার পূর্বের অভিজ্ঞতা..."></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success btn-lg">
+                            <i class="fas fa-handshake me-2"></i>স্বেচ্ছাসেবী হিসেবে রেজিস্টার করুন
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- পরিসংখ্যান পেজ -->
+    <section id="stats" class="page-section">
+        <div class="container py-5">
+            <h2 class="text-center section-title">আমাদের অর্জন</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalLoans">১,২৫০</div>
+                    <div class="stat-label">মোট ঋণ প্রদান</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="totalDonations">৳ ১৫.৫ লাখ</div>
+                    <div class="stat-label">মোট দান সংগ্রহ</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="activeVolunteers">৮৫</div>
+                    <div class="stat-label">সক্রিয় স্বেচ্ছাসেবী</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="successStories">৩২০</div>
+                    <div class="stat-label">সফলতার গল্প</div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-md-6">
+                    <div class="form-container">
+                        <h4 class="mb-4">মাসিক অগ্রগতি</h4>
+                        <canvas id="monthlyProgressChart" width="400" height="200"></canvas>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-container">
+                        <h4 class="mb-4">সেবার ধরন অনুযায়ী বিতরণ</h4>
+                        <canvas id="serviceDistributionChart" width="400" height="200"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- সেটআপ পেজ -->
+    <section id="setup" class="page-section">
+        <div class="container py-5">
+            <h2 class="text-center section-title">সিস্টেম সেটআপ</h2>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="setup-panel">
+                        <h4><i class="fas fa-database me-2"></i>ডেটা ব্যাকআপ</h4>
+                        <p>আপনার সমস্ত ডেটা নিরাপদে ব্যাকআপ করুন</p>
+                        <button class="btn btn-outline-primary" onclick="app.backupData()">
+                            <i class="fas fa-download me-2"></i>ব্যাকআপ নিন
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="setup-panel">
+                        <h4><i class="fas fa-sliders-h me-2"></i>সিস্টেম সেটিংস</h4>
+                        <p>সিস্টেমের বিভিন্ন সেটিংস কনফিগার করুন</p>
+                        <button class="btn btn-outline-primary" onclick="app.openSettings()">
+                            <i class="fas fa-cog me-2"></i>সেটিংস খুলুন
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="setup-panel">
+                        <h4><i class="fas fa-users me-2"></i>ব্যবহারকারী ব্যবস্থাপনা</h4>
+                        <p>ব্যবহারকারীদের পরিচালনা এবং অনুমতি সেট করুন</p>
+                        <button class="btn btn-outline-primary" onclick="app.manageUsers()">
+                            <i class="fas fa-user-cog me-2"></i>ব্যবহারকারী ব্যবস্থাপনা
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="setup-panel">
+                        <h4><i class="fas fa-chart-line me-2"></i>রিপোর্ট জেনারেটর</h4>
+                        <p>বিভিন্ন রিপোর্ট তৈরি এবং এক্সপোর্ট করুন</p>
+                        <button class="btn btn-outline-primary" onclick="app.generateReports()">
+                            <i class="fas fa-file-export me-2"></i>রিপোর্ট তৈরি করুন
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-container mt-4">
+                <h4 class="mb-4">Google Apps Script কনফিগারেশন</h4>
+                <div class="mb-3">
+                    <label for="scriptUrl" class="form-label">Google Apps Script URL</label>
+                    <input type="url" class="form-control" id="scriptUrl" value="https://script.google.com/macros/s/AKfycbzwXn42Ytia5p-oyY66WCrQthOjxNU-snRUvq1rSAkhqs_1KTZ-UAJOopz60DfKHFTt/exec">
+                </div>
+                <div class="mb-3">
+                    <label for="apiKey" class="form-label">API কী (ঐচ্ছিক)</label>
+                    <input type="text" class="form-control" id="apiKey" placeholder="আপনার API কী">
+                </div>
+                <button class="btn btn-success" onclick="app.saveConfig()">
+                    <i class="fas fa-save me-2"></i>কনফিগারেশন সেভ করুন
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ফুটার -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>আলহামদুলিল্লাহ ফাউন্ডেশন</h5>
+                    <p>কর্জে হাসানা - বিনা সুদে ঋণ প্রদানের মাধ্যমে নারীদের আত্মনির্ভরশীল করে তোলা।</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>যোগাযোগ</h5>
+                    <p><i class="fas fa-phone me-2"></i> +৮৮০১৭XXXXXXXX</p>
+                    <p><i class="fas fa-envelope me-2"></i> info@alhamdulillahfoundation.org</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>গুরুত্বপূর্ণ লিংক</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" onclick="app.showPage('about')" class="text-white">আমাদের সম্পর্কে</a></li>
+                        <li><a href="#" onclick="app.showPage('services')" class="text-white">সেবাসমূহ</a></li>
+                        <li><a href="#" onclick="app.showPage('apply')" class="text-white">সদস্য হন</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p>&copy; ২০২৪ আলহামদুলিল্লাহ ফাউন্ডেশন। সর্বস্বত্ব সংরক্ষিত।</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- স্ক্রিপ্টস -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Main Application Object
+        const app = {
+            currentPage: 'home',
+            scriptURL: 'https://script.google.com/macros/s/AKfycbzwXn42Ytia5p-oyY66WCrQthOjxNU-snRUvq1rSAkhqs_1KTZ-UAJOopz60DfKHFTt/exec',
+            
+            // Page Navigation
+            showPage(pageId) {
+                // Hide all pages
+                document.querySelectorAll('.page-section').forEach(page => {
+                    page.classList.remove('active');
+                });
+                
+                // Remove active class from all nav links
+                document.querySelectorAll('.nav-menu a').forEach(link => {
+                    link.classList.remove('active');
+                });
+                
+                // Show selected page
+                document.getElementById(pageId).classList.add('active');
+                
+                // Add active class to clicked nav link
+                event.target.classList.add('active');
+                
+                // Update current page
+                this.currentPage = pageId;
+                
+                // Scroll to top
+                window.scrollTo(0, 0);
+                
+                // Initialize page specific functions
+                this.initializePage(pageId);
+            },
+            
+            // Initialize page specific functions
+            initializePage(pageId) {
+                switch(pageId) {
+                    case 'stats':
+                        this.initializeCharts();
+                        break;
+                    case 'donate':
+                        this.initializeDonationPage();
+                        break;
+                }
+            },
+            
+            // Initialize donation page
+            initializeDonationPage() {
+                // Amount button functionality
+                document.querySelectorAll('.amount-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
+                        this.classList.add('active');
+                        
+                        if (this.dataset.amount !== 'custom') {
+                            document.getElementById('donationAmount').value = this.dataset.amount;
+                        } else {
+                            document.getElementById('donationAmount').value = '';
+                            document.getElementById('donationAmount').focus();
+                        }
+                    });
+                });
+            },
+            
+            // Initialize charts
+            initializeCharts() {
+                // Monthly Progress Chart
+                const monthlyCtx = document.getElementById('monthlyProgressChart').getContext('2d');
+                new Chart(monthlyCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['জানু', 'ফেব্রু', 'মার্চ', 'এপ্রিল', 'মে', 'জুন'],
+                        datasets: [{
+                            label: 'ঋণ প্রদান',
+                            data: [65, 59, 80, 81, 56, 95],
+                            borderColor: '#2E8B57',
+                            backgroundColor: 'rgba(46, 139, 87, 0.1)',
+                            tension: 0.4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                rtl: true
+                            }
+                        }
+                    }
+                });
+                
+                // Service Distribution Chart
+                const serviceCtx = document.getElementById('serviceDistributionChart').getContext('2d');
+                new Chart(serviceCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['কর্জে হাসানা', 'প্রশিক্ষণ', 'কর্মসংস্থান', 'অন্যান্য'],
+                        datasets: [{
+                            data: [45, 25, 20, 10],
+                            backgroundColor: [
+                                '#2E8B57',
+                                '#228B22',
+                                '#32CD32',
+                                '#90EE90'
+                            ]
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                rtl: true
+                            }
+                        }
+                    }
+                });
+            },
+            
+            // Setup page functions
+            backupData() {
+                alert('ডেটা ব্যাকআপ প্রক্রিয়া শুরু হয়েছে...');
+            },
+            
+            openSettings() {
+                alert('সেটিংস প্যানেল খোলা হচ্ছে...');
+            },
+            
+            manageUsers() {
+                alert('ব্যবহারকারী ব্যবস্থাপনা প্যানেল খোলা হচ্ছে...');
+            },
+            
+            generateReports() {
+                alert('রিপোর্ট জেনারেশন প্রক্রিয়া শুরু হয়েছে...');
+            },
+            
+            saveConfig() {
+                const scriptUrl = document.getElementById('scriptUrl').value;
+                const apiKey = document.getElementById('apiKey').value;
+                
+                this.scriptURL = scriptUrl;
+                localStorage.setItem('appConfig', JSON.stringify({
+                    scriptURL: scriptUrl,
+                    apiKey: apiKey
+                }));
+                
+                alert('কনফিগারেশন সফলভাবে সেভ হয়েছে!');
+            }
+        };
+
+        // Form submission handler for application form
+        document.getElementById('applicationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>জমা হচ্ছে...';
+            submitBtn.disabled = true;
+            
+            document.getElementById('loadingSpinner').style.display = 'block';
+            document.getElementById('successMessage').style.display = 'none';
+            document.getElementById('errorMessage').style.display = 'none';
+            
+            // Collect form data
+            const formData = new FormData();
+            formData.append('name', document.getElementById('name').value);
+            formData.append('mobile', document.getElementById('mobile').value);
+            formData.append('email', document.getElementById('email').value || 'N/A');
+            formData.append('nid', document.getElementById('nid').value || 'N/A');
+            formData.append('address', document.getElementById('address').value);
+            formData.append('occupation', document.getElementById('occupation').value);
+            formData.append('loanAmount', document.getElementById('loanAmount').value);
+            formData.append('purpose', document.getElementById('purpose').value);
+            formData.append('timestamp', new Date().toLocaleString('bn-BD'));
+            formData.append('type', 'application');
+            
+            // Submit to Google Apps Script
+            fetch(app.scriptURL, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('successMessage').style.display = 'block';
+                document.getElementById('errorMessage').style.display = 'none';
+                document.getElementById('applicationForm').reset();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('errorMessage').style.display = 'block';
+                document.getElementById('successMessage').style.display = 'none';
+            })
+            .finally(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                document.getElementById('loadingSpinner').style.display = 'none';
+            });
+        });
+
+        // Form submission handler for donation form
+        document.getElementById('donationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>প্রক্রিয়াকরণ...';
+            submitBtn.disabled = true;
+            
+            const formData = new FormData();
+            formData.append('donorName', document.getElementById('donorName').value);
+            formData.append('donorMobile', document.getElementById('donorMobile').value);
+            formData.append('donorEmail', document.getElementById('donorEmail').value || 'N/A');
+            formData.append('donationAmount', document.getElementById('donationAmount').value);
+            formData.append('paymentMethod', document.getElementById('paymentMethod').value);
+            formData.append('transactionId', document.getElementById('transactionId').value || 'N/A');
+            formData.append('donationMessage', document.getElementById('donationMessage').value || 'N/A');
+            for
