@@ -1104,4 +1104,63 @@
             formData.append('paymentMethod', document.getElementById('paymentMethod').value);
             formData.append('transactionId', document.getElementById('transactionId').value || 'N/A');
             formData.append('donationMessage', document.getElementById('donationMessage').value || 'N/A');
-            for
+            formData.append('anonymous', document.getElementById('anonymousDonation').checked);
+            formData.append('timestamp', new Date().toLocaleString('bn-BD'));
+            formData.append('type', 'donation');
+            
+            fetch(app.scriptURL, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('donationSuccess').style.display = 'block';
+                document.getElementById('donationError').style.display = 'none';
+                this.reset();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('donationError').style.display = 'block';
+                document.getElementById('donationSuccess').style.display = 'none';
+            })
+            .finally(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            });
+        });
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load saved configuration
+            const savedConfig = localStorage.getItem('appConfig');
+            if (savedConfig) {
+                const config = JSON.parse(savedConfig);
+                app.scriptURL = config.scriptURL;
+                if (document.getElementById('scriptUrl')) {
+                    document.getElementById('scriptUrl').value = config.scriptURL;
+                }
+                if (document.getElementById('apiKey')) {
+                    document.getElementById('apiKey').value = config.apiKey || '';
+                }
+            }
+            
+            // Initialize donation page if it's the current page
+            if (app.currentPage === 'donate') {
+                app.initializeDonationPage();
+            }
+        });
+
+        // Navbar background change on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.backgroundColor = 'rgba(26, 83, 27, 0.95)';
+                navbar.style.backdropFilter = 'blur(10px)';
+            } else {
+                navbar.style.backgroundColor = '';
+                navbar.style.backdropFilter = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
